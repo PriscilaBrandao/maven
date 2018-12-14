@@ -5,6 +5,7 @@
  */
 package com.fieb.senai.entidades;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -17,6 +18,7 @@ public class Cliente {
     private String nome;
     private Integer matricula;
     private Integer idade;
+    
     private Endereco endereço;
     private Set<String> telefone = new HashSet<>();
 
@@ -62,8 +64,9 @@ public class Cliente {
         return telefone;
     }
 
-    public void setTelefone(Set<String> telefone) {
-        this.telefone = telefone;
+   
+    public void setTelefone(String... telefone) {
+        this.telefone.addAll(Arrays.asList(telefone));
     }
 
     
